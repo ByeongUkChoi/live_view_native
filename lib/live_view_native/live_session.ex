@@ -20,7 +20,7 @@ defmodule LiveViewNative.LiveSession do
       _result ->
         socket =
           socket
-          |> assign(:native, nil)
+          |> assign(:native, LiveViewNative.platform!(:web))
           |> assign(:platform_id, :web)
 
         {:cont, socket}
